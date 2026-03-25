@@ -29,7 +29,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center; /* Centra horizontal */
-	justify-content: center; /* Centra vertical */
+	justify-content: flex-start; /* Centra vertical */
+	padding: 20px;
 }
 
 /* 3. Pantalla de Bienvenida (Corregido el centrado) */
@@ -70,9 +71,10 @@ body {
 /* 4. Contenedor Principal (Pokédex Activa) */
 .main-wrapper {
 	width: 100%;
-	max-width: 1400px;
-	padding: 20px;
-	box-sizing: border-box;
+	max-width: 1200px; /* Un ancho estándar de escritorio */
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .pokedex-header {
@@ -84,7 +86,7 @@ body {
 	margin-bottom: 30px;
 }
 
-.pokedex-header h1 {
+.pokedex-header h2 {
 	color: #333;
 	font-size: 2.5rem;
 	text-transform: uppercase;
@@ -116,21 +118,24 @@ body {
 /* 6. Grilla de Pokémon */
 #pokedex-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-	gap: 30px;
-	padding: 20px 0;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 20px;
+	width: 100%;
+	margin-top: 30px;
 }
 
 /* 7. La Card */
 .pokemon-card {
 	background: white;
 	border-radius: 20px;
-	padding: 25px;
-	text-align: center;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-	transition: transform 0.3s ease;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	/* Importante para que no se achiquen */
+	min-height: 350px;
 }
-
 .pokemon-card:hover {
 	transform: translateY(-10px);
 }
@@ -138,12 +143,23 @@ body {
 .img-container {
 	background-color: #f8f8f8;
 	border-radius: 50%;
-	width: 150px;
-	height: 150px;
+	width: 130px;
+	height: 130px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto 15px auto;
+	overflow: hidden;
+}
+.pokemon-card img {
+	/* Limitamos el ancho y alto máximo al 85% de su contenedor padre (.img-container) */
+	max-width: 85%;
+	max-height: 85%;
+	/* Mantiene la proporción de la imagen sin deformarla */
+	object-fit: contain;
+	filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.1));
+	/* Centrado automático si flexbox no lo hace */
+	margin: auto;
 }
 
 /* 8. Utilidades */
