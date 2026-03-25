@@ -1,0 +1,130 @@
+/* Variables para los colores de tipos (Clean Code en CSS) */
+:root {
+	--fire: #ff9c54;
+	--grass: #63bb5b;
+	--water: #3393dd;
+	--bug: #90c12c;
+	--normal: #9099a1;
+	--poison: #ab6ac8;
+	--electric: #f3d23b;
+	--ground: #d97746;
+	--fairy: #ee99ac;
+	--ice: #74cec0;
+	--psychic: #f95587;
+	--rock: #b6a136;
+	--ghost: #735797;
+	--dragon: #096dc1;
+	--dark: #5a5366;
+	--steel: #5a8ea1;
+	--fighting: #ce4069;
+	--flying: #81a9f7;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f6f8fc;
+	margin: 0;
+	padding: 20px;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* grilla */
+#pokedex-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+	gap: 25px;
+	justify-content: center;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+/* Estilo de la card */
+.pokemon-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+	border-radius: 20px;
+	padding: 25px;
+	text-align: center;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover {
+	transform: translateY(-5px);
+}
+.img-container {
+	background-color: #f2f2f2;
+	border-radius: 50%;
+	width: 160px;
+	height: 160px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+}
+.pokemon-card img {
+	width: 140px;
+	height: 140px;
+	object-fit: contain;
+	filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+}
+/* Colores dinámicos según tipo */
+.pokemon-card.fire {
+	border-top: 10px solid var(--fire);
+}
+.pokemon-card.water {
+	border-top: 10px solid var(--water);
+}
+.pokemon-card.grass {
+	border-top: 10px solid var(--grass);
+}
+.pokemon-card.electric {
+	border-top: 10px solid var(--electric);
+}
+.pokemon-card.bug {
+	border-top: 10px solid var(--bug);
+}
+.pokemon-card.poison {
+	border-top: 10px solid var(--poison);
+}
+.pokemon-card.normal {
+	border-top: 10px solid var(--normal);
+}
+.pokemon-card.ground {
+	border-top: 10px solid var(--ground);
+}
+.pokemon-card.fairy {
+	border-top: 10px solid var(--fairy);
+}
+.pokemon-card.psychic {
+	border-top: 10px solid var(--psychic);
+}
+.pokemon-card.rock {
+	border-top: 10px solid var(--rock);
+}
+.pokemon-card.ghost {
+	border-top: 10px solid var(--ghost);
+}
+.pokemon-card.ice {
+	border-top: 10px solid var(--ice);
+}
+.pokemon-card.dragon {
+	border-top: 10px solid var(--dragon);
+}
+.pokemon-card.fighting {
+	border-top: 10px solid var(--fighting);
+}
+.type-badge {
+	display: inline-block;
+	padding: 5px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	color: white;
+	margin-top: 10px;
+	background-color: #777;
+}
