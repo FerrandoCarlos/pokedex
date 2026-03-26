@@ -17,14 +17,14 @@ const initPokedex = async () => {
             sanitizedValue = sanitizedValue.substring(0, 20);
         }
 
-        const term = sanitizedValue.lowerCase().trim();
+        const term = sanitizedValue.toLowerCase().trim();
 
         if (rawValue !== sanitizedValue) {
             e.target.value = sanitizedValue;
         }
 
         const filtered = allPokemons.filter(p =>
-            p.name.includes(term)
+            p.name.toLowerCase().includes(term)
         );
 
         renderPokedex(filtered);
