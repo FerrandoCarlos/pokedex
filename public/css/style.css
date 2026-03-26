@@ -141,7 +141,7 @@ body {
 	align-items: center;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 	/* Importante para que no se achiquen */
-	min-height: auto;
+	min-height: 0;
 	height: fit-content;
 	transition: transform 0.3s ease;
 	align-self: start;
