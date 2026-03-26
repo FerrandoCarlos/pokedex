@@ -9,7 +9,19 @@ const initPokedex = async () => {
 
     const searchInput = document.getElementById('poke-search');
     searchInput.addEventListener('input', e => {
-        const term = e.target.value.toLowerCase().trim();
+
+        let rawValue = e.target.value;
+        let sanitizedValue = rawValue.replace(/[^a-zA-Z0-9]/g, '');
+
+        if (sanitizedValue.length > 20) {
+            sanitizedValue = sanitizedValue.substring(0, 20);
+        }
+
+        const term = sanitizedValue.lowerCase().trim();
+
+        if (rawValue !== sanitizedValue) {
+            e.target.value = sanitizedValue;
+        }
 
         const filtered = allPokemons.filter(p =>
             p.name.includes(term)
