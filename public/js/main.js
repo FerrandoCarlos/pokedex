@@ -23,9 +23,10 @@ const initPokedex = async () => {
             e.target.value = sanitizedValue;
         }
 
-        const filtered = allPokemons.filter(p =>
-            p.name.toLowerCase().includes(term)
-        );
+        const filtered = allPokemons.filter(p => {
+            const name = p.name.toLowerCase();
+            return name.startsWith(term);
+        });
 
         renderPokedex(filtered);
     })
