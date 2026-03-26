@@ -150,18 +150,6 @@ body {
 	transform: translateY(-10px);
 }
 
-/* .img-container { */
-background-color: #f8f8f8;
-border-radius: 50%;
-width: 130px;
-height: 130px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0 auto 15px auto;
-overflow: hidden;
-/* } */
-
 .img-container {
 	width: 120px;
 	height: 120px;
